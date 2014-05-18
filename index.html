@@ -6,11 +6,42 @@
 <!--    <script type="text/javascript"
         src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
     </script> -->
+
+    <!-- in #chart / width percentage for scaling to paper can be set. Bigger means
+         smaller SVG in printout. 130% is a good value for DIN A4  -->
+    <style tyle="text/css">
+        @media print {
+            #chart {
+                width: 130%;
+                margin: 0px;
+                padding: 0px;
+                page-break-inside : avoid;
+            }
+        }
+    </style>
+
+    <!-- text pairs for modification -->
+    <script type="text/javascript">
+        var pairs = [
+            ['uno', 'eins'],
+            ['dos', 'zwei'],
+            ['tres', 'drei'],
+            ['cuatro', 'vier'],
+            ['cinco', 'fünf'],
+            ['seis', 'sechs'],
+            ['siete', 'sieben'],
+            ['ocho', 'acht'],
+            ['nueve', 'neun'],
+            ['diez', 'zehn'],
+            ['once', 'elf'],
+            ['doce', 'zwölf']
+        ];
+    </script>
 </head>
 
 <body>
     <div id="chart">
-        <svg>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
         
         </svg>
     </div>

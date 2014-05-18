@@ -8,11 +8,11 @@
     
     var yhigh = Math.pow(3,1/2);
 
-    var scalex = Math.min(width/5, height/yhigh/4.2);
+    var scalex = Math.min(width/4.25, height/yhigh/4.25);
     var scaley = scalex;
     
-    width = scalex * 5;
-    height = scaley * yhigh * 5;
+    width = scalex * 4;
+    height = scaley * yhigh * 4;
     
     /* 
      * triangle with left "edge" at cx, cy 
@@ -49,7 +49,7 @@
             .attr('stroke', 'black')
             .attr('points', (-scalex) + ',' + (+scaley*yhigh/3) + ' ' +
                             (+scalex) + ',' + (+scaley*yhigh/3) + ' ' +
-                            (0)       + ',' + (-scaley*yhigh/3*2) );               
+                            (0)       + ',' + (-scaley*yhigh/3*2) );
         
         g.append('text')
             .attr('x', 0)
@@ -73,36 +73,19 @@
             .attr('text-anchor', 'middle')
             .attr('transform', 'rotate(-120)');
         
-        g.append('text')
-            .attr('x', 0)
-            .attr('y', 0)
-            .text('o')
-            .attr('text-anchor', 'middle');
+        g.append('svg:image')
+            .attr('x', -scalex / 10)
+            .attr('y', -scalex / 10)
+            .attr('width', scalex / 5)
+            .attr('height', scalex / 5)
+            .attr('xlink:href', 'dsm_windrad_logo.png');
     }
-    
-    var pairs = [
-        ['uno', 'eins'],
-        ['dos', 'zwei'],
-        ['tres', 'drei'],
-        ['cuatro', 'vier'],
-        ['cinco', 'fünf'],
-        ['seis', 'sechs'],
-        ['siete', 'sieben'],
-        ['ocho', 'acht'],
-        ['nueve', 'neun'],
-        ['diez', 'zehn'],
-        ['once', 'elf'],
-        ['doce', 'zwölf']
-    ];
 
-    var left = scalex / 2;
-    var top = scaley / yhigh / 2;
+    var left = scalex / 8;
+    var top = scaley / yhigh / 8;
     
-    svg.append('text')
-        .attr('x', left + 2*scalex)
-        .attr('y', top  - scaley/10*yhigh)
-        .text('Alles Gute zum Muttertag!')
-        .attr('text-anchor', 'middle');
+    left = 0;
+    top = 0;
     
     // up, starting in the middle with 180° rotation, clockwise
     full(left + 2*scalex, top + 0*scaley*yhigh + scaley*1*yhigh/3, 180, [pairs[0][0], pairs[1][0], pairs[2][0]]);
