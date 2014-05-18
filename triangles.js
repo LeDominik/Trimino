@@ -8,11 +8,8 @@
     
     var yhigh = Math.pow(3,1/2);
 
-    var scalex = width / 8;
-    var scaley = height / 8;
-    
-    scalex = Math.min(width/10, height/yhigh/5);
-    scaley = scalex;
+    var scalex = Math.min(width/5, height/yhigh/4.2);
+    var scaley = scalex;
     
     width = scalex * 5;
     height = scaley * yhigh * 5;
@@ -30,10 +27,8 @@
                            (up ? (cy - scaley*yhigh) : (cy + scaley*yhigh)));
     }
 
-
     //adds svg & g elements to page so zooming will work
-    var svg = d3.select("#chart")
-      .append("svg:svg")
+    var svg = d3.select("svg")
         .attr("width", width)
         .attr("height", height);
 
